@@ -1,0 +1,22 @@
+<!--pages/friend/index.wxml-->
+<scroll-view scroll-y="true">
+  <view class="list">
+    <view class="list-item" wx:for="{{concats}}" wx:key="index">
+      <view class="avatar">
+        <image src="{{item.reciev_avatar}}" />
+      </view>
+      <view class="center">
+        <view class="left">
+          <text class="nikname">{{item.reciev_nick}}</text>
+          <text class="last-chat">{{last_msg}}</text>
+        </view>
+        <view class="right">
+          <text class="time">8月21日</text>
+          <!-- 是否已读 -->
+          <view class="new">new</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>

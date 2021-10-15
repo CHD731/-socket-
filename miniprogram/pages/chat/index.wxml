@@ -1,0 +1,32 @@
+<!--pages/soul/index.wxml-->
+<view class="chat">
+  <scroll-view id="chat-view" style="height: {{pageHeight}}" class="chat-view" scroll-into-view="{{toView}}"
+    scroll-y="true">
+    <view class="chat-thread" id="item{{index}}" wx:for="{{chat_record}}" wx:key="index">
+      <view class="left" wx:if="{{item.isMe == false}}">
+        <image class="left-avatar" src="{{item.to_avatar}}" />
+        <view class="left-msg">
+          <text wx:if="{{item.isImg == false}}">{{item.msg}}</text>
+            <image wx:if="{{item.isImg == true}}"  class="chat-img" src="data:image/png;base64,{{item.msg}}"
+            mode="widthFix"
+            bindtap="clickImg"
+             />
+        </view>
+      </view>
+
+      <view class="right" wx:if="{{item.isMe == true}}">
+        <image class="right-avatar" src="{{item.from_avatar}}" />
+        <view class="right-msg">
+          <!-- 判断是图片还是文字 -->
+          <text wx:if="{{item.isImg == false}}">{{item.msg}}</text>
+            <image wx:if="{{item.isImg == true}}" class="chat-img" src="data:image/png;base64,{{item.msg}}"  
+            mode="widthFix"
+            bindtap="clickImg"
+            />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部发送框 -->
+  <chat-input bind:sendMsg="sendMsg" bind:sendMessage="sendMsg" bind:sendImg="sendImg"></chat-input>
+</view>

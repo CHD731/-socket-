@@ -1,0 +1,130 @@
+/* pages/soul/index.wxss */
+page {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+ 
+
+  .chat-view {
+    height: 450px;
+  }
+  .chat-thread:first-child {
+    padding-top: 20px;
+  }
+  .chat-thread:last-child {
+    margin-bottom: 20px;
+  }
+
+     /* 聊天的三角形 */
+     .chat-thread view:after {
+      position: absolute;
+      top: 15px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 15px solid rgba(25, 147, 147, 0.2);
+    }
+
+  /* 聊天框 */
+  .left-msg,.right-msg {
+    position: relative;
+    clear: both;
+    padding: 8px 20px 8px 10px;
+    margin-bottom: 20px;
+    font: 14px 'Noto Sans', sans-serif;
+    border-radius: 8px;
+    background-color: rgba(25, 147, 147, 0.2);
+     /* 文字换行 */
+     max-width: 60%;
+     word-wrap: break-word;
+     word-break: normal;
+  }
+   
+  
+
+  .right {
+    position: relative;
+    overflow: hidden;
+  }
+  .right-avatar {
+    position: absolute;
+    right: 2%;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+  .right-msg {
+    /* 入场动画 */
+    animation: show-chat-odd 0.15s 1 ease-in;
+    float: right;
+    margin-right: 18%;
+    margin-left: 10%;
+    color: #0AD5C1;
+  }
+  .right-msg:before {
+    right: -32%;
+  }
+  .right-msg:after {
+    border-right: 15px solid transparent;
+    right: -15px;
+  }  
+  .left {
+    position: relative;
+    overflow: hidden;
+  }
+  .left-avatar {
+    position: absolute;
+    border-radius: 50%;
+    left: 2%;
+    width: 35px;
+    height: 35px;
+  }
+  .left-msg {
+    animation: show-chat-even 0.15s 1 ease-in;
+    float: left;
+    margin-left: 18%;
+    margin-right: 10%;
+    color: #0EC879;
+   
+  }
+  
+  .left-msg:after {
+    border-left: 15px solid transparent;
+    left: -15px;
+  }
+  
+  .left-msg:before {
+    left: -32%;
+  }
+
+/* 发送的图片 */
+.chat-img {
+  vertical-align: -5px; 
+  width: 450rpx;
+}
+
+  /* bottom */
+
+
+  @keyframes show-chat-even {
+    0% {
+      margin-left: -480px;
+    }
+  
+    100% {
+      margin-left: 0;
+    }
+  }
+  @keyframes show-chat-odd {
+    0% {
+      margin-right: -480px;
+    }
+  
+    100% {
+      margin-right: 0;
+    }
+  }

@@ -1,0 +1,7 @@
+<!--pages/findFriend/index.wxml-->
+<view class="content">
+  <view class="circle" bindtap="findFriend">
+  <text>开始匹配</text>
+  </view>
+  <text class="onlineNum">当前在线人数{{onlineNum}}</text>
+</view>

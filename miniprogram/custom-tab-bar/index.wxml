@@ -1,0 +1,9 @@
+<view class="tab-bar">
+  <view class="switch-tab {{item.bulge?'bulge':''}}" wx:for="{{list}}" wx:key="index" bindtap="switchTab" data-index="{{index}}" data-path="{{item.pagePath}}">
+  <view>
+    <view  wx:if="item.bulge" class="tab-bar-bulge tab-bar-view"></view>
+    <image class="img" src="{{selected===index?item.selectedIconPath:item.iconPath}}" />
+  </view>
+    <view class="bottomtext" style="color:{{selected === index ? selectedColor:color}}">{{item.text}}</view>
+  </view>
+</view>
